@@ -5,7 +5,7 @@ app.use(express.json())
 app.use(express.static("build"))
 
 
-const pokemons = ["pikachu", "eevee"]
+const pokemons = ["pikachu", "eevee", "merong"]
 
 app.get("/api/pokemons", (req, res) => {
   res.send(pokemons)
