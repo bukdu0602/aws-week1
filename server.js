@@ -6,7 +6,7 @@ app.use(express.json())
 const pokemons = [
   {
     id: 1,
-    name: "Pikachu",
+    name: "Pikachu2",
     type: "electric ⚡️",
     level: 99,
     image: "/pikachu.webp"
