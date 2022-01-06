@@ -2,24 +2,17 @@ const express = require("express");
 const app = express();
 
 app.use(express.json())
+app.use(express.static("build"))
 
-const pokemons = [
-  {
-    id: 1,
-    name: "Pikachu2",
-    type: "electric ⚡️",
-    level: 99,
-    image: "/pikachu.webp"
-  }
-]
+
+const pokemons = ["pikachu", "eevee"]
 
 app.get("/api/pokemons", (req, res) => {
-  res.send({pokemons: pokemons})
+  res.send(pokemons)
 });
 
 app.post("/api/pokemons", (req, res) => {
-  const data = req.body
-  data.id = pokemons.length+1
+  const data = req.body.name
   pokemons.push(data)
   res.send(data)
 })
